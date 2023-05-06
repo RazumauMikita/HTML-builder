@@ -12,7 +12,7 @@ console.log('Input text!');
 stdin.on('data', data => {
    
     const dataString = data.toString().trim();
-    if (dataString == exitWord || dataString == '^C') {
+    if (dataString == exitWord) {
         console.log('Bye-bye!');
         exit();
     }
