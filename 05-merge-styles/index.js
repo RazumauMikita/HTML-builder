@@ -22,14 +22,15 @@ fs.readdir(
         if (err) throw err;
         files.forEach((file) => {
             let fileExtName = path.extname(path.join(__dirname, 'styles', file.name));
-
             if (fileExtName === '.css') {
+
                 fs.readFile(
                     path.join(__dirname,'styles', file.name),
                     'utf-8',
                     (err, fileIn) => {
                     if (err) throw err;
                     arrStyle.push(fileIn)
+
                     fs.appendFile(
                         path.join(__dirname, 'project-dist', 'bundle.css'),
                         `${fileIn}`,
